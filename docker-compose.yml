@@ -37,6 +37,7 @@ services:
     volumes:
       - mongo_data:/data/db
       - ./TP2_Document/starter/init-mongo.js:/docker-entrypoint-initdb.d/init.js
+      - ./:/tp
     networks:
       - nosql_net
 
@@ -67,6 +68,7 @@ services:
       MAX_HEAP_SIZE: 512M
     volumes:
       - cassandra_data:/var/lib/cassandra
+      - ./:/tp
     networks:
       - nosql_net
     healthcheck:
